@@ -29,6 +29,11 @@
         $('#dark-version').prop('checked', true);
         document.body.classList.toggle("dark-version");
       }
+      $('.table-collapse tbody tr').on('click', function(){
+        console.log(jQuery(this).next('div'))
+        jQuery(this).addClass('shadow-sm');
+        jQuery('.table-collapse tbody td div.collapse:not(show)').parents('td').css('border-bottom-width', '1px');
+      });
     });
   </script>
   <!-- CSS Files -->
@@ -444,7 +449,7 @@
       </div>
       <div class="card mt-3 pb-4">
         <div class="table-responsive">
-          <table class="table align-items-center mb-0">
+          <table class="table align-items-center mb-0 table-collapse">
             <!-- Início cabeçalho -->
             <thead>
               <tr>
